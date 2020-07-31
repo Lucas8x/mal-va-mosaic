@@ -1,0 +1,22 @@
+.container {
+  position: relative;
+  text-align: center;
+}
+
+ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+li {
+  display: flex;
+  flex-direction: column;
+}
+
+.people-name {
+  color: black;
+  position: absolute;
+  top: 93%;
+  left: 50%;
+}
