@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "e746875a8e692dce74b37f2759703cf9",
+    "revision": "d047cfc236e3225c73a0decce88898c9",
     "url": "/mal-va-mosaic/index.html"
   },
   {
-    "revision": "fda06f3396064031103a",
+    "revision": "edf5d7478a670e96f60f",
     "url": "/mal-va-mosaic/static/css/main.c7482d81.chunk.css"
   },
   {
-    "revision": "f87458eca1322fa3f6f1",
-    "url": "/mal-va-mosaic/static/js/2.8250a684.chunk.js"
+    "revision": "53081fba65fab6c1d820",
+    "url": "/mal-va-mosaic/static/js/2.f37e5f81.chunk.js"
   },
   {
     "revision": "c64c486544348f10a6d6c716950bc223",
-    "url": "/mal-va-mosaic/static/js/2.8250a684.chunk.js.LICENSE.txt"
+    "url": "/mal-va-mosaic/static/js/2.f37e5f81.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "fda06f3396064031103a",
-    "url": "/mal-va-mosaic/static/js/main.a930844e.chunk.js"
+    "revision": "edf5d7478a670e96f60f",
+    "url": "/mal-va-mosaic/static/js/main.38f5b926.chunk.js"
   },
   {
     "revision": "ca3350bbbc251a49a7f5",
