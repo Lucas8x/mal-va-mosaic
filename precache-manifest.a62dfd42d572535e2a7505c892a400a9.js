@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "e60c3b72eddbdab85c79b7df1eb6e249",
+    "revision": "5c9a07621e7ab39035d6ab66b82836db",
     "url": "/mal-va-mosaic/index.html"
   },
   {
-    "revision": "4de86484b620fed7a942",
+    "revision": "afa90931f77ed4a5934f",
     "url": "/mal-va-mosaic/static/css/main.c7482d81.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/mal-va-mosaic/static/js/2.add1ae1f.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "4de86484b620fed7a942",
-    "url": "/mal-va-mosaic/static/js/main.84b7bb05.chunk.js"
+    "revision": "afa90931f77ed4a5934f",
+    "url": "/mal-va-mosaic/static/js/main.9c9f1c7e.chunk.js"
   },
   {
     "revision": "ca3350bbbc251a49a7f5",
