@@ -8,7 +8,7 @@ export default function Routes() {
   return (
     <HashRouter basename="/">
       <Route path="/" exact component={Home} />
-      <Route path="/mosaic/:id" component={Mosaic} />
+      <Route path="/:id" component={Mosaic} />
     </HashRouter>
   )
 }
