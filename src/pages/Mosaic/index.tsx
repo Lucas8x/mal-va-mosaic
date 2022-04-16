@@ -1,9 +1,8 @@
 import { useState, useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 
 import { api } from '../../services/api';
-
 import { VoiceActorGrid } from '../../components/VoiceActorGrid';
-
 import { Container } from './styles';
 
 interface RouterProps {
@@ -27,21 +26,30 @@ interface DataProps {
 }
 
 export function Mosaic({ match }: RouterProps) {
+  const history = useHistory();
   const { id } = match.params;
 
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
   const [data, setData] = useState<DataProps>();
 
-  async function fetch() {
-    setIsLoading(true);
-    const { data } = await api.get(`/people/${id}`);
-    setData(data);
-    setIsLoading(false);
-  }
+  const idIsNumber = !isNaN(id as any);
 
   useEffect(() => {
-    fetch();
-  }, [id]);
+    if (!idIsNumber) return history.push('/');
+  }, [id, history, idIsNumber]);
+
+  useEffect(() => {
+    if (!idIsNumber) return;
+
+    async function fetchVoiceActorData() {
+      setIsLoading(true);
+      const { data } = await api.get(`/people/${id}`);
+      setData(data);
+      setIsLoading(false);
+    }
+
+    fetchVoiceActorData();
+  }, [id, idIsNumber]);
 
   if (isLoading) {
     return <p>Loading...</p>;

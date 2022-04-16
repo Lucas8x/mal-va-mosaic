@@ -7,7 +7,7 @@ export function Routes() {
   const routes = (
     <>
       <Route path='/' exact component={Home} />
-      <Route path='/:id' component={Mosaic} />
+      <Route path='/:id' exact component={Mosaic} />
     </>
   );
 

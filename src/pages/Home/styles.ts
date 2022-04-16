@@ -7,13 +7,14 @@ export const Container = styled.div`
   align-items: center;
 `;
 
-export const Form = styled.form`
-  margin-top: 20%;
-  width: 100%;
-  max-width: 350px;
+export const Wrapper = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  margin-top: 20%;
+  width: 100%;
+  max-width: 350px;
 `;
 
 export const ErrorMessage = styled.span`
@@ -34,11 +35,13 @@ export const ErrorMessage = styled.span`
 `;
 export const Input = styled.input`
   width: 100%;
+  height: 48px;
   margin-top: 15px;
+  padding: 0 20px;
+
   border: 1px solid #ddd;
   border-radius: 4px;
-  height: 48px;
-  padding: 0 20px;
+
   font-size: 16px;
   color: #666;
 
@@ -59,4 +62,6 @@ export const EnterButton = styled.button`
   font-size: 16px;
   font-weight: bold;
   color: #fff;
+
+  cursor: pointer;
 `;
