@@ -11,7 +11,7 @@ export function Routes() {
     </>
   );
 
-  return process.env.REACT_APP_GH_PAGES_DEPLOY === 1 ? (
+  return process.env.REACT_APP_GH_PAGES_DEPLOY === '1' ? (
     <HashRouter basename='/'>{routes}</HashRouter>
   ) : (
     <BrowserRouter>
