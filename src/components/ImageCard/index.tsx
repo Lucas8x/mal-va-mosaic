@@ -13,16 +13,14 @@ import {
 } from './styles';
 
 interface ImageCardProps {
-  data: {
-    name: string;
-    default: string;
-    pictures: string[];
-  };
+  name: string;
+  defaultPicture: string;
+  pictures: string[];
 }
 
-export function ImageCard({ data }: ImageCardProps) {
+export function ImageCard({ name, defaultPicture, pictures }: ImageCardProps) {
   const [currentPictureIndex, setCurrentPictureIndex] = useState<number>(
-    data.pictures.indexOf(data.default)
+    pictures.indexOf(defaultPicture)
   );
 
   function previousPicture() {
@@ -32,13 +30,13 @@ export function ImageCard({ data }: ImageCardProps) {
   }
 
   function nextPicture() {
-    if (currentPictureIndex + 1 < data.pictures.length) {
+    if (currentPictureIndex + 1 < pictures.length) {
       setCurrentPictureIndex(currentPictureIndex + 1);
     }
   }
 
   return (
-    <ImageCardContainer key={data.name}>
+    <ImageCardContainer key={name}>
       {/* <ImageGallery
         items={data.pictures.map((x) => ({
           original: x,
@@ -59,8 +57,8 @@ export function ImageCard({ data }: ImageCardProps) {
         </ControlLeft>
 
         <VoiceActorImage
-          src={data.pictures[currentPictureIndex]}
-          alt={`${data.name} photos`}
+          src={pictures[currentPictureIndex]}
+          alt={`${name} photos`}
         />
 
         <ControlRight type='button' onClick={nextPicture}>
@@ -69,7 +67,7 @@ export function ImageCard({ data }: ImageCardProps) {
       </Main>
 
       <ImageCardInfo>
-        <strong>{data.name}</strong>
+        <strong>{name}</strong>
       </ImageCardInfo>
     </ImageCardContainer>
   );

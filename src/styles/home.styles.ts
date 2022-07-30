@@ -1,7 +1,8 @@
 import styled, { css } from 'styled-components';
 
 export const Container = styled.div`
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -12,7 +13,6 @@ export const Wrapper = styled.form`
   flex-direction: column;
   align-items: center;
 
-  margin-top: 20%;
   width: 100%;
   max-width: 350px;
 `;
@@ -64,4 +64,9 @@ export const EnterButton = styled.button`
   color: #fff;
 
   cursor: pointer;
+
+  :disabled {
+    cursor: not-allowed;
+    opacity: 0.8;
+  }
 `;

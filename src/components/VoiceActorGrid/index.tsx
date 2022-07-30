@@ -16,20 +16,21 @@ interface VoiceActorGridProps {
 }
 
 export function VoiceActorGrid({ data }: VoiceActorGridProps) {
+  const { name, default: dfp, pictures, characters } = data;
+
   return (
-    <Container className='va-grid-container'>
+    <Container>
       <List>
-        <ImageCard
-          data={{
-            name: data.name,
-            default: data.default,
-            pictures: data.pictures,
-          }}
-        />
-        {data.characters
-          ? data.characters.map((character, index) =>
-              character.name && character.pictures ? (
-                <ImageCard key={index} data={character} />
+        <ImageCard name={name} defaultPicture={dfp} pictures={pictures} />
+        {characters
+          ? characters.map(({ name, pictures, default: dfp }, index) =>
+              name && pictures ? (
+                <ImageCard
+                  key={index}
+                  name={name}
+                  defaultPicture={dfp}
+                  pictures={pictures}
+                />
               ) : null
             )
           : 'NO CHARACTERS'}
