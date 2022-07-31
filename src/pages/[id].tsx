@@ -1,4 +1,5 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
+import Head from 'next/head';
 
 import { api } from '../services/api';
 import { VoiceActorGrid } from '../components/VoiceActorGrid';
@@ -12,9 +13,15 @@ interface Props {
 
 export default function Mosaic({ data }: Props) {
   return (
-    <MosaicContainer>
-      <VoiceActorGrid data={data} />
-    </MosaicContainer>
+    <>
+      <Head>
+        <title>{data?.name.replace(',', '')} | MAL Mosaic</title>
+      </Head>
+
+      <MosaicContainer>
+        <VoiceActorGrid data={data} />
+      </MosaicContainer>
+    </>
   );
 }
 

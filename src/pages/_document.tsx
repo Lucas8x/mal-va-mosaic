@@ -34,4 +34,24 @@ export default class MyDocument extends Document {
       sheet.seal();
     }
   }
+
+  render() {
+    return (
+      <Html>
+        <Head>
+          <meta name='application-name' content='MAL Mosaic' />
+          <link rel='manifest' href='/manifest.json' />
+          <meta
+            name='description'
+            content='create mosaic of voice actors and characters'
+          />
+          <meta name='theme-color' content='#fff' />
+        </Head>
+        <body>
+          <Main />
+          <NextScript />
+        </body>
+      </Html>
+    );
+  }
 }

@@ -1,0 +1,14 @@
+{
+  "name": "MyAnimeList Voice Actor Mosaic",
+  "short_name": "MAL Mosaic",
+  "description": "create mosaic of voice actors and characters",
+  "theme_color": "#fff",
+  "background_color": "#fff",
+  "scope": "/",
+  "start_url": "/",
+  "lang": "en",
+  "categories": "fun,utilities",
+  "display": "standalone",
+  "orientation": "portrait",
+  "splash_pages": null
+}

@@ -38,20 +38,26 @@ export default function Home() {
   }, [url]);
 
   return (
-    <Container>
-      <Wrapper>
-        {error && <ErrorMessage>{error}</ErrorMessage>}
+    <>
+      <Head>
+        <title>MAL Mosaic</title>
+      </Head>
 
-        <Input
-          placeholder='Enter MyAnimeList voice actor url'
-          value={url}
-          onChange={(e) => setURL(e.target.value)}
-        />
+      <Container>
+        <Wrapper>
+          {error && <ErrorMessage>{error}</ErrorMessage>}
 
-        <Link href='/[id]' as={`/${id}`} prefetch={false}>
-          <EnterButton disabled={!id}>Enter</EnterButton>
-        </Link>
-      </Wrapper>
-    </Container>
+          <Input
+            placeholder='Enter MyAnimeList voice actor url'
+            value={url}
+            onChange={(e) => setURL(e.target.value)}
+          />
+
+          <Link href='/[id]' as={`/${id}`} prefetch={false}>
+            <EnterButton disabled={!id}>Enter</EnterButton>
+          </Link>
+        </Wrapper>
+      </Container>
+    </>
   );
 }
