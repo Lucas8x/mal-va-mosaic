@@ -1,20 +1,10 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
+
 import { api } from '../services/api';
 import { VoiceActorGrid } from '../components/VoiceActorGrid';
-import { Container } from '../styles/mosaic.styles';
+import { PeopleData } from '../interfaces';
 
-interface PeopleData {
-  id: string;
-  name: string;
-  default: string;
-  pictures: Array<string>;
-  characters: Array<{
-    name: string;
-    default: string;
-    pictures: Array<string>;
-    favorites: number;
-  }>;
-}
+import { MosaicContainer } from '../styles/mosaic.styles';
 
 interface Props {
   data: PeopleData;
@@ -22,9 +12,9 @@ interface Props {
 
 export default function Mosaic({ data }: Props) {
   return (
-    <Container>
+    <MosaicContainer>
       <VoiceActorGrid data={data} />
-    </Container>
+    </MosaicContainer>
   );
 }
 
@@ -37,7 +27,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async (ctx) => {
   const { id } = ctx.params as { id: string };
-  const { data } = await api.get(`/people/${id}`);
+  const { data, status } = await api.get(`/people/${id}`);
 
   return {
     props: {

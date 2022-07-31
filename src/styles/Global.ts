@@ -7,6 +7,10 @@ export const GlobalStyles = createGlobalStyle`
     box-sizing: border-box;
   }
 
+  body {
+    width: 100%;
+  }
+
   button {
     cursor: pointer;
   }

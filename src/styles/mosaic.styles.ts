@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
-  position: relative;
-  text-align: center;
+export const MosaicContainer = styled.div`
+  display: flex;
+  justify-content: center;
 `;

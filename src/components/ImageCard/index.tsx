@@ -1,11 +1,10 @@
 import { useState } from 'react';
-import { FiArrowLeft, FiArrowRight, FiExternalLink } from 'react-icons/fi';
-
 //import ImageGallery from 'react-image-gallery';
 
 import {
   ImageCardContainer,
   ImageCardInfo,
+  InfoName,
   Main,
   VoiceActorImage,
   ControlLeft,
@@ -22,6 +21,9 @@ export function ImageCard({ name, defaultPicture, pictures }: ImageCardProps) {
   const [currentPictureIndex, setCurrentPictureIndex] = useState<number>(
     pictures.indexOf(defaultPicture)
   );
+
+  const isFirstPicture = currentPictureIndex === 0;
+  const isLastPicture = currentPictureIndex === pictures.length - 1;
 
   function previousPicture() {
     if (currentPictureIndex > 0) {
@@ -52,22 +54,18 @@ export function ImageCard({ name, defaultPicture, pictures }: ImageCardProps) {
         showFullscreenButton={false}
       /> */}
       <Main>
-        <ControlLeft type='button' onClick={previousPicture}>
-          <FiArrowLeft />
-        </ControlLeft>
+        <ControlLeft disabled={isFirstPicture} onClick={previousPicture} />
 
         <VoiceActorImage
           src={pictures[currentPictureIndex]}
           alt={`${name} photos`}
         />
 
-        <ControlRight type='button' onClick={nextPicture}>
-          <FiArrowRight />
-        </ControlRight>
+        <ControlRight disabled={isLastPicture} onClick={nextPicture} />
       </Main>
 
       <ImageCardInfo>
-        <strong>{name}</strong>
+        <InfoName>{name}</InfoName>
       </ImageCardInfo>
     </ImageCardContainer>
   );

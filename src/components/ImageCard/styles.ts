@@ -1,20 +1,30 @@
 import styled, { css } from 'styled-components';
+import { ChevronLeft, ChevronRight } from '@styled-icons/bootstrap/';
 
-export const ImageCardContainer = styled.li`
+export const ImageCardContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  max-width: 225px;
+  max-height: 350px;
 `;
 
 export const ImageCardInfo = styled.div`
+  display: none;
   position: relative;
-  margin-top: -20px;
-
   width: 100%;
-  max-width: 225px;
+  margin-top: -36px;
+  text-align: center;
 
+  ${ImageCardContainer}:hover & {
+    display: block;
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+`;
+
+export const InfoName = styled.span`
+  font-weight: 600;
   color: white;
-  background-color: transparent;
 `;
 
 export const Main = styled.div`
@@ -27,26 +37,31 @@ export const Main = styled.div`
 
 export const VoiceActorImage = styled.img`
   height: 100%;
-  width: 225px;
+  width: 100%;
   transition: 0.3s ease-in-out;
   /* object-fit: cover; */
 `;
 
-export const ControlCss = css`
-  width: 10px;
-  height: 10px;
+export const ControlCss = css<{ disabled: boolean }>`
+  width: 100px;
+  height: 25px;
   background-color: transparent;
   color: white;
-  border: 0;
+  display: ${({ disabled }) => (disabled ? 'none' : 'block')};
+  cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'pointer')};
+
+  ${ImageCardContainer}:hover & {
+    background-color: rgba(0, 0, 0, 0.3);
+  }
 `;
 
-export const ControlLeft = styled.button`
+export const ControlLeft = styled(ChevronLeft)`
   ${ControlCss}
   margin-right: -13px;
   position: relative;
 `;
 
-export const ControlRight = styled.button`
+export const ControlRight = styled(ChevronRight)`
   ${ControlCss}
   margin-left: -13px;
   position: relative;

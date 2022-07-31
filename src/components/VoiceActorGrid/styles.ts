@@ -1,9 +1,8 @@
 import styled, { css } from 'styled-components';
 
-export const Container = styled.div``;
-
-export const List = styled.ul`
-  list-style: none;
+export const VAGContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  width: 100%;
+  grid-template-columns: 225px repeat(auto-fill, 225px);
 `;

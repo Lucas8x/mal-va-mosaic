@@ -48,7 +48,7 @@ export default function Home() {
           onChange={(e) => setURL(e.target.value)}
         />
 
-        <Link href={`/${id}`}>
+        <Link href='/[id]' as={`/${id}`} prefetch={false}>
           <EnterButton disabled={!id}>Enter</EnterButton>
         </Link>
       </Wrapper>
